@@ -1,12 +1,12 @@
 var intercom = {
     
     registerIdentifiedUser: function(options, success, error) {
-        cordova.exec(success, error, 'Intercom', 'loginUserWithUserAttributes', [options]);
-        console.warn('registerIdentifiedUser() is deprecated and will be removed in a future release. Please use loginUserWithUserAttributes()');
+        cordova.exec(success, error, 'Intercom', 'loginIdentifiedUser', [options]);
+        console.warn('registerIdentifiedUser() is deprecated and will be removed in a future release. Please use loginIdentifiedUser()');
     },
     
-    loginUserWithUserAttributes: function(options, success, error) {
-        cordova.exec(success, error, 'Intercom', 'loginUserWithUserAttributes', [options]);
+    loginIdentifiedUser: function(options, success, error) {
+        cordova.exec(success, error, 'Intercom', 'loginIdentifiedUser', [options]);
     },
 
     registerUnidentifiedUser: function(options, success, error) {
