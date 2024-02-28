@@ -34,7 +34,7 @@ dependencies {
     implementation 'org.jetbrains:annotations:13.0'
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
     if (pushType == 'fcm' || pushType == 'fcm-without-build-plugin') {
-        implementation 'com.google.firebase:firebase-messaging:20.+'
+        implementation 'com.google.firebase:firebase-messaging:23.1.0'
         implementation 'io.intercom.android:intercom-sdk-fcm:14.2.0'
     }
 }
