@@ -1,10 +1,22 @@
 var intercom = {
     
     registerIdentifiedUser: function(options, success, error) {
-        cordova.exec(success, error, 'Intercom', 'loginIdentifiedUser', [options]);
-        console.warn('registerIdentifiedUser() is deprecated and will be removed in a future release. Please use loginIdentifiedUser()');
+        var devicePlatform = device.platform;
+
+        // Android has new Intercom version. iOS old version (no photos permission issues).
+        if (devicePlatform === 'Android') {
+            cordova.exec(success, error, 'Intercom', 'loginIdentifiedUser', [options]);
+            console.warn('registerIdentifiedUser() is deprecated and will be removed in a future release. Please use loginIdentifiedUser()');
+        } else if (devicePlatform === 'iOS') {
+            cordova.exec(success, error, 'Intercom', 'loginUserWithUserAttributes', [options]);
+            console.warn('registerIdentifiedUser() is deprecated and will be removed in a future release. Please use loginUserWithUserAttributes()');
+        }
     },
     
+    loginUserWithUserAttributes: function(options, success, error) {
+        cordova.exec(success, error, 'Intercom', 'loginUserWithUserAttributes', [options]);
+    },
+
     loginIdentifiedUser: function(options, success, error) {
         cordova.exec(success, error, 'Intercom', 'loginIdentifiedUser', [options]);
     },

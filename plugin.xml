@@ -65,6 +65,8 @@
               <pod name="Intercom" spec="~> 13.0.0" />
           </pods>
       </podspec>
+
+      <dependency id="cordova-plugin-device" />
     </platform>
 
     <platform name="android">
@@ -84,6 +86,8 @@
           <param name="onload" value="true" />
         </feature>
       </config-file>
+
+      <dependency id="cordova-plugin-device" />
     </platform>
 
 </plugin>
